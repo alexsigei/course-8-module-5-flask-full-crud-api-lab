@@ -89,9 +89,7 @@ def delete_event(event_id):
     for event in events:
         if event.id == event_id:
             events.remove(event)
-            return jsonify({
-                "message": "Event deleted successfully"
-            }), 200
+            return "", 204
 
     # Event was not found
     return jsonify({"error": "Event not found"}), 404
